@@ -5,12 +5,15 @@
 <title>GraphChart</title>
 </head>
 <body>
-	<form action="DrawChart">
+	<form action="MainServlet">
 		<div align="center">
 			Insert function <input type="text" size="50" name="function" value="" /><br />
 			From x = <input type="text" size="10" name="from" value=""/> 
 			To x = <input type="text" size="10" name="to" value=""/> <br /> 
 			 <input type="submit" value="Draw chart"/>
+		</div>
+		<div>
+		<img src="../image/coordinates.PNG" alt="" />
 		</div>
 	</form>
 
