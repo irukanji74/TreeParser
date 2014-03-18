@@ -1,7 +1,8 @@
 package expressiontree;
 
 import java.util.LinkedList;
-import parserutilities.NodeVisitor;
+
+import parserutilities.AbstractNodeVisitor;
 
 public class AddSubNode implements Node {
 
@@ -33,10 +34,11 @@ public class AddSubNode implements Node {
 		return sum;
 	}
 
-	public void accept(NodeVisitor visitor) {
+	public void accept(AbstractNodeVisitor visitor) {
 		visitor.visit(this);
 	    for (PartExpression pe : partExpr)
 	      pe.expr.accept(visitor);
 	}
+
 
 }

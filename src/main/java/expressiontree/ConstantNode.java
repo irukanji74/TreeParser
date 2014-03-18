@@ -1,6 +1,6 @@
 package expressiontree;
 
-import parserutilities.NodeVisitor;
+import parserutilities.AbstractNodeVisitor;
 
 /**
  Class implements Node for the tree node of constant number
@@ -26,7 +26,7 @@ public class ConstantNode implements Node{
 		return value;
 	}
 
-	public void accept(NodeVisitor visitor) {
+	public void accept(AbstractNodeVisitor  visitor) {
 		visitor.visit(this);
 		
 	}

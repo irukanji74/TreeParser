@@ -1,11 +1,11 @@
 package expressiontree;
 
-import parserutilities.NodeVisitor;
+import parserutilities.AbstractNodeVisitor;
 
 public class VarNode implements Node {
 
 	private String name;
-	private double value;
+	private Double value;
 	private boolean isSet;
 
 	public VarNode(String name) {
@@ -34,7 +34,7 @@ public class VarNode implements Node {
 		return 0.0;
 	}
 
-	public void accept(NodeVisitor visitor) {
+	public void accept(AbstractNodeVisitor  visitor) {
 		visitor.visit(this);
 	}
 

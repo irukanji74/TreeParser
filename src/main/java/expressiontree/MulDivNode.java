@@ -2,7 +2,7 @@ package expressiontree;
 
 import java.util.LinkedList;
 
-import parserutilities.NodeVisitor;
+import parserutilities.AbstractNodeVisitor;
 
 public class MulDivNode implements Node {
 
@@ -28,15 +28,16 @@ public class MulDivNode implements Node {
 	public double getValue() {
 		double product = 1.0;
 		for(PartExpression pE : partExpr){
-		if(pE.up)
+		if(pE.up){
 			product *= pE.expr.getValue();
-		else product /= pE.expr.getValue();
+		}
+		else {product /= pE.expr.getValue();}
 			
 		}		
 		return product;
 	}
 
-	public void accept(NodeVisitor visitor) {
+	public void accept(AbstractNodeVisitor  visitor) {
 		visitor.visit(this);
 	    for (PartExpression pe : partExpr)
 	      pe.expr.accept(visitor);

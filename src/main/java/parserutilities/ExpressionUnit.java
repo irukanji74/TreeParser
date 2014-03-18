@@ -2,7 +2,19 @@ package parserutilities;
 
 public class ExpressionUnit {
 
-	public static final int FINISH = 0;
+	  
+	public enum Terminals{
+		FINISH(0),  PLUSMINUS(1),  MULDIV(2),  RAISED(3),  FUNCTION(4),
+		OPEN_BRACKET(5),  CLOSE_BRACKET(6),  NUMBER(7), VARIABLE(8);
+		
+		int termValue;
+		
+		private Terminals(int termValue){
+			this.termValue = termValue;
+		}
+	}
+	
+	  public static final int FINISH = 0;
 	  public static final int PLUSMINUS = 1;
 	  public static final int MULDIV = 2;
 	  public static final int RAISED = 3;

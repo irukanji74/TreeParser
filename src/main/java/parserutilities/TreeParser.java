@@ -2,14 +2,12 @@ package parserutilities;
 
 import java.util.LinkedList;
 
-import javax.swing.tree.VariableHeightLayoutCache;
-
 import expressiontree.AddSubNode;
 import expressiontree.ConstantNode;
 import expressiontree.FunctionNode;
 import expressiontree.MulDivNode;
 import expressiontree.Node;
-import expressiontree.PartExpression;
+import expressiontree.ParserException;
 import expressiontree.PowNode;
 import expressiontree.VarNode;
 
@@ -42,7 +40,7 @@ public class TreeParser {
 
 		Node expression = expression();
 		if (nextUnit.unit != ExpressionUnit.FINISH) {
-			System.out.printf("Unexpected symbol %s found", nextUnit);
+			throw new ParserException("Unexpected symbol %s found");
 		}
 		return expression;
 	}

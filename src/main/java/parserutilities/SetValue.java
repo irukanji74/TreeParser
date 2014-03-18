@@ -1,13 +1,8 @@
 package parserutilities;
 
-import expressiontree.AddSubNode;
-import expressiontree.ConstantNode;
-import expressiontree.FunctionNode;
-import expressiontree.MulDivNode;
-import expressiontree.PowNode;
 import expressiontree.VarNode;
 
-public class SetValue implements NodeVisitor{
+public class SetValue extends AbstractNodeVisitor{
 
 	private String name;
 	private double value;
@@ -21,25 +16,4 @@ public class SetValue implements NodeVisitor{
 		if(node.getName().equals(name))
 			node.setValue(value);
 	}
-	public void visit(AddSubNode node) {
-		// TODO Auto-generated method stub
-		
-	}
-	public void visit(ConstantNode node) {
-		// TODO Auto-generated method stub
-		
-	}
-	public void visit(FunctionNode node) {
-		// TODO Auto-generated method stub
-		
-	}
-	public void visit(MulDivNode node) {
-		// TODO Auto-generated method stub
-		
-	}
-	public void visit(PowNode node) {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

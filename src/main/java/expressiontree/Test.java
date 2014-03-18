@@ -1,5 +1,6 @@
 package expressiontree;
 
+
 import parserutilities.SetValue;
 import parserutilities.TreeParser;
 
@@ -13,7 +14,7 @@ public class Test {
 			expr.accept(new SetValue("x", 6.0));
 			System.out.println("The value of the expression is " + expr.getValue());
 
-		} catch (Exception e) {
+		} catch (ParserException e) {
 			System.out.println(e.getMessage());
 		}
 

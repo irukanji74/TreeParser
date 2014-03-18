@@ -3,7 +3,9 @@ package parserutilities;
 import java.util.LinkedList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 import expressiontree.FunctionNode;
+import expressiontree.ParserException;
 
 public class UnitParser {
 
@@ -67,7 +69,7 @@ public class UnitParser {
 				}
 			}
 			if (!match)
-			System.out.println("Unexpected character in input: " + s);;
+				throw new ParserException("Unexpected character in input: " + s);;
 		}
 	}
 

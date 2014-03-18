@@ -1,6 +1,6 @@
 package expressiontree;
 
-import parserutilities.NodeVisitor;
+import parserutilities.AbstractNodeVisitor;
 
 public class PowNode implements Node {
 
@@ -18,7 +18,7 @@ public class PowNode implements Node {
 	public double getValue() {
 		return Math.pow(base.getValue(), exponent.getValue());
 	}
-	public void accept(NodeVisitor visitor) {
+	public void accept(AbstractNodeVisitor  visitor) {
 		visitor.visit(this);
 	    base.accept(visitor);
 	    exponent.accept(visitor);
